@@ -1,6 +1,6 @@
 import React,{FC} from 'react';
 
-export interface IProductProps{
+export interface IProductProps{ // remove to own folder!!!!
     id: number,
     title: string,
     description: string,
@@ -42,8 +42,8 @@ const Product: FC<IProductTypeProps> = ({id,
                 <li>{category}</li>
                 <img key={id} src={thumbnail} alt={title} />
 
-                {images && images.map((imgUrl) =>(
-                    <img key={id} src={imgUrl} alt={title}/>
+                {images && images.map((imgUrl,index) =>(
+                    <img key={index} src={imgUrl} alt={title}/>
                 ))}
             </ul>
         </div>
