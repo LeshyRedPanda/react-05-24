@@ -8,18 +8,12 @@ type IPropsType = IProps;
 const PostComponent: FC<IPropsType> = ({post}) => {
     return (
         <div>
-            <br/>
-            User ID : {post.userId}
-            <br/>
-            Post ID : {post.id}
-            <br/>
-            Post title : {post.title}
-            <br/>
-            {post.body}
-            <br/>
-            <br/>
-
-
+            <ul>
+                <li>User ID : {post.userId} ; Post ID : {post.id}</li>
+                <li>Post Title : {post.title}</li>
+                <li>Post : {post.body}</li>
+            </ul>
+            <hr/>
         </div>
 
     );

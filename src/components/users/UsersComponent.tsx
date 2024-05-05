@@ -5,9 +5,9 @@ import {getAllUsers} from "../../services/jpg.api.service";
 import {brotliCompress} from "node:zlib";
 
 
+type IPropsType = {lift?:(postId:number) => void}
 
-
-const UsersComponent  =() =>{
+const UsersComponent:FC<IPropsType>  =({lift}) =>{
     const [users,setUsers] = useState<UserModel[]>([]);
 
 
@@ -21,7 +21,7 @@ const UsersComponent  =() =>{
 
     return(
         <div>
-            {users.map((user) => (<UserComponent key={user.id} user={user}/>))}
+            {users.map((user) => (<UserComponent key={user.id} user={user} lift={lift}/>))}
 
         </div>
 

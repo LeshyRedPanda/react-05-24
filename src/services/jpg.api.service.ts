@@ -4,7 +4,6 @@ import {PostModel} from "../models/postModel";
 
 let axiosInstance = axios.create({
     baseURL:'https://jsonplaceholder.typicode.com',
-
 });
 
 
@@ -12,11 +11,19 @@ const getAllUsers = ():Promise<AxiosResponse<UserModel[]>> =>{
     return axiosInstance.get('/users')
 }
 
-const getAllPosts = ():Promise<AxiosResponse<PostModel[]>> => {
-    return axiosInstance.get('/posts');
+
+//all posts
+// const getAllPosts = ():Promise<AxiosResponse<PostModel[]>> => {
+//     return axiosInstance.get('/posts');
+// }
+
+//get all posts + id
+const getAllSinglePost = (userId:number):Promise<AxiosResponse<PostModel[]>> => {
+    // return axiosInstance.get(('/posts/postId='+ id))
+    return axiosInstance.get(`/users/${userId}/posts`)
 }
 
 export {
     getAllUsers,
-    getAllPosts
+    getAllSinglePost
 }

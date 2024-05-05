@@ -5,10 +5,15 @@ interface IProps{
     user:UserModel;
 }
 
-type IPropsType = IProps;
+type IPropsType = IProps & {lift?:(userId:number) => void};
 
-const UserComponent:FC<IPropsType> = ({user}) => {
-  return(
+const UserComponent:FC<IPropsType> = ({user,lift}) => {
+        const onClickHandler = () => {
+                if (lift) {
+                        lift(user.id);
+                }
+        };
+        return(
       <div>
           <ul>
                   <li>id : {user.id}</li>
@@ -36,6 +41,8 @@ const UserComponent:FC<IPropsType> = ({user}) => {
                   <li>bs : {user.company.bs}</li>
 
           </ul>
+              <button className={'postsBtn'} onClick={onClickHandler}>show user posts</button>
+              <hr/>
 
       </div>
   );
