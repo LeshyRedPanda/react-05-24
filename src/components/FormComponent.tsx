@@ -35,13 +35,13 @@ const save = (post:IFormProps) =>{
                 {errors.title && <span>{errors.title.message}</span>}
                 <div><p>Body : </p>
                     <input type="text" {...register('body')}/></div>
-
+                {errors.body && <span>{errors.body.message}</span>}
                 <div><p>User ID: </p>
                     <input type="number" {...register('userId')}/></div>
-
+                {errors.userId && <span>{errors.userId.message}</span>}
                 <button>save</button>
 
-                {post && <h2>Saved post ID: {post.id} , Post title: {post.title}</h2>}
+                {post && <h2>Saved post ID: {post.id} , Post title: {post.title} , Post : {post.body}</h2>}
 
             </form>
         </div>)}
