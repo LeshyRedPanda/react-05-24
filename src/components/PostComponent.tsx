@@ -13,7 +13,6 @@ const PostComponent:FC<IProps> = ({post}) => {
                 Post title : {post.title}<br/>
                 Post body : {post.body}
                 <br/><br/></div>
-
         </div>
     );
 };
