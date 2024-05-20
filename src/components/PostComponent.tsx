@@ -8,7 +8,7 @@ interface IProps{
 const PostComponent:FC<IProps> = ({post}) => {
     return (
         <div>
-            <div key={post.id}>
+            <div>
                 Post ID : {post.id}<br/>
                 Post title : {post.title}<br/>
                 Post body : {post.body}

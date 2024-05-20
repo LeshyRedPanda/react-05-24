@@ -8,7 +8,7 @@ const CommentComponent:FC<IProps> = ({comment}) => {
     return (
         <div>
 
-            <div key={comment.id}>
+            <div>
                 Name : {comment.name}<br/>
                 email : {comment.email}<br/>
                 Body : {comment.body}
