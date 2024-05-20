@@ -27,7 +27,7 @@ export const routerConfig = createBrowserRouter([
             },
             //add new page :
             {path:'users/:id',element:<PostsPage/>},
-            {path:'/posts/:id/comments',element:<CommentsPage/>}
+            {path:'/posts/:postId/comments',element:<CommentsPage/>}
         ]
     }
 ])

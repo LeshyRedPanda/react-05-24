@@ -14,3 +14,6 @@ const commentsApiService ={
         return axiosInstance.get(`/posts/${postId}/comments`)
 }
 }
+
+
+export default commentsApiService;

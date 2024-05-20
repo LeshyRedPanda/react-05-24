@@ -9,6 +9,8 @@ const CommentComponent:FC<IProps> = ({comment}) => {
         <div>
 
             <div>
+                Post ID : {comment.postId} <br/>
+                Comment ID : {comment.id} <br/>
                 Name : {comment.name}<br/>
                 email : {comment.email}<br/>
                 Body : {comment.body}
