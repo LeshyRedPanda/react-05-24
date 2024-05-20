@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {userApiService} from "../services/api.service";
 import {ICommentModel} from "../models/ICommentModel";
+import CommentComponent from "./CommentComponent";
 
 const CommentsComponent = () => {
 
@@ -12,12 +13,7 @@ const CommentsComponent = () => {
 
     return (
         <div>
-            {comments.map(comment =>
-                <div key={comment.id}>
-                Name : {comment.name}<br/>
-                email : {comment.email}<br/>
-                Body : {comment.body}
-                <br/> <br/></div>)}
+            {comments.map(comment =><CommentComponent key={comment.id} comment={comment}/>)}
             <hr/>
         </div>
     );
