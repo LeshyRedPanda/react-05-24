@@ -5,6 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgba(137, 172, 238, 0.47);
+  padding: 15px;
+}
+
+
+.line{
+  border: none;
+  border-top: 2px dashed #777171;
+  height: 0;
+  margin: 20px 0;
 }
 
 code {

@@ -1,4 +1,4 @@
-import React, {FC, useEffect, useState} from 'react';
+import React, {FC} from 'react';
 import {IPostModel} from "../models/IPostModel";
 import PostComponent from "./PostComponent";
 
@@ -9,15 +9,6 @@ interface IProps{
 
 const PostsComponent:FC<IProps> = ({posts}) => {
     console.log(posts)
-    // const {id} = useParams();
-    // console.log(useParams())
-
-    // const [posts, setPosts] = useState<IPostModel[]>([])
-
-    // useEffect(() => {
-    //     userApiService.getAllPosts().then(value => setPosts(value.data))
-    // }, []);
-
 
     return (
         <div>

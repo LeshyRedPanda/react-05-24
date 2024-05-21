@@ -1,6 +1,7 @@
 import React, {FC} from 'react';
 import {ICommentModel} from "../models/ICommentModel";
 
+
 interface IProps{
     comment:ICommentModel
 }
@@ -15,6 +16,7 @@ const CommentComponent:FC<IProps> = ({comment}) => {
                 email : {comment.email}<br/>
                 Body : {comment.body}
                 <br/> <br/></div>
+            <hr className={'line'}/>
 
         </div>
     );

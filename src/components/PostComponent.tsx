@@ -15,7 +15,7 @@ const PostComponent:FC<IProps> = ({post}) => {
             {/*   /posts/1/comments    */}
             <Link to={`/posts/${post.id}/comments`}>comments btn</Link>
             <br/><br/>
-            <hr/>
+            <hr className={'line'}/>
         </div>
     );
 };

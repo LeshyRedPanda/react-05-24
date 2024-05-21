@@ -23,9 +23,7 @@ const CommentsPage = () => {
 
     return (
         <div>
-            comments page
             <CommentsComponent comments={comments}/>
-
         </div>
     );
 };

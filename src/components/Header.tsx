@@ -10,11 +10,7 @@ const Header:FC = () => {
             <br/>
             <Link to={'users'}>Users</Link>
             <br/>
-            <Link to={'posts'}>Posts</Link>
-            <br/>
-            <Link to={'comments'}>Comments</Link>
             <hr/>
-
         </div>
     );
 };
