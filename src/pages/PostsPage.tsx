@@ -22,7 +22,7 @@ const PostsPage = () => {
     return (
         <div>
             posts page
-            <PostsComp posts={posts}/>
+            <PostsComp post={posts}/>
 
         </div>
     );

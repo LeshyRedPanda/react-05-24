@@ -6,7 +6,7 @@ interface IProps{
     post:IPostModel[]
 }
 
-const PostsComp:FC<IProps> = ({post}) => {
+const PostsComp:FC<IProps> = ({posts}) => {
 
 
     return (
