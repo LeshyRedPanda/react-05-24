@@ -1,6 +1,6 @@
 import React, {FC} from 'react';
 import {IUserModel} from "../models/IUserModel";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 interface IProps{
     user:IUserModel
@@ -8,11 +8,22 @@ interface IProps{
 
 
 const UserComp:FC<IProps> = ({user}) => {
+    const navigate = useNavigate()
     return (
         <div>
 
 
-            <Link to={user.id.toString()}> {user.name} {user.email}</Link>
+            <Link
+                to={user.id.toString()}
+                state={{foo:'bar'}}
+            >
+                {user.name}
+                {user.email}
+            </Link>
+            <button onClick={()=>{
+                navigate(user.id.toString(),{state:{foo:'fofofofofbar'}})
+            }}> user posts </button>
+
             <br/>
             <br/>
 

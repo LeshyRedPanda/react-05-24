@@ -3,7 +3,7 @@ import {IPostModel} from "../models/IPostModel";
 import PostComp from "./PostComp";
 
 interface IProps{
-    post:IPostModel[]
+    posts:IPostModel[]
 }
 
 const PostsComp:FC<IProps> = ({posts}) => {
@@ -13,12 +13,9 @@ const PostsComp:FC<IProps> = ({posts}) => {
         <div>
 
             {posts.map(post => <PostComp key={post.id} post={post}/>)}
-
-
-
-
         </div>
     );
 };
 
 export default PostsComp;
+//-------------------------------------------------------
