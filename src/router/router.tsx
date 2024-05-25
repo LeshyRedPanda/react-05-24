@@ -4,6 +4,7 @@ import MainLayout from "../layout/MainLayout";
 import HomePage from "../pages/HomePage";
 import UsersPage from "../pages/UsersPage";
 import PostsPage from "../pages/PostsPage";
+import CommentsPage from "../pages/CommentsPage";
 
 
 export const routerConfig = createBrowserRouter([
@@ -15,10 +16,14 @@ export const routerConfig = createBrowserRouter([
             {index:true,element:<HomePage/>},
             {path:'users',element:<UsersPage/>,
                 children:[
-                    {path:':id',element:<PostsPage/>}
+                    {path:':id',element:<PostsPage/>,
+                    children:[
+
+                    ]}
                 ]
 
             },
+            {path:'posts/:postId/comments',element:<CommentsPage/>}
 
         ]
 

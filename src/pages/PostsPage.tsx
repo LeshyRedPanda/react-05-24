@@ -10,18 +10,7 @@ const PostsPage = () => {
     const location = useLocation();
     console.log(location.pathname)
 
-
-
-    // const {id} = useParams()
-    // console.log(id)
     const [posts, setPosts] = useState<IPostModel[]>([])
-
-    // useEffect(() => {
-    //     if (id){
-    //         postsApiService.getPostOfUser(id)
-    //             .then(value => setPosts(value.data))
-    //     }
-    // }, [id]);
 
     useEffect(() => {
         if (location.pathname){
@@ -34,6 +23,7 @@ const PostsPage = () => {
     return (
         <div>
             <PostsComp posts={posts}/>
+
         </div>
 
     )

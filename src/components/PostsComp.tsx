@@ -18,4 +18,3 @@ const PostsComp:FC<IProps> = ({posts}) => {
 };
 
 export default PostsComp;
-//-------------------------------------------------------
