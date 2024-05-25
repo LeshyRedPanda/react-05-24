@@ -1,33 +1,27 @@
 import React, {FC} from 'react';
 import {IUserModel} from "../models/IUserModel";
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 interface IProps {
     user: IUserModel
 }
 
-
 const UserComp: FC<IProps> = ({user}) => {
+
     const navigate = useNavigate()
+
     return (
-        <div>
-
-
-            <Link
-                to={user.id.toString()}
-                state={{foo: 'bar'}}
-            >
-                {user.name}
-                {user.email}
-            </Link>
-            <button onClick={() => {
+        <div className={'divTxt'}>
+            <p>
+                Name : {user.name}
+                Email : {user.email}
+            </p>
+            <button className={'btn'} onClick={() => {
                 navigate(user.id.toString(), {state: {foo: 'fofofofofbar'}})
-            }}> user posts
+            }}> User posts
             </button>
-
             <br/>
             <br/>
-
         </div>
     );
 };

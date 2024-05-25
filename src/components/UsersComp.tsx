@@ -14,10 +14,6 @@ const UsersComp = () => {
     return (
         <div>
             {users.map(user => <UserComp  key={user.id} user={user}/>)}
-
-
-
-            
         </div>
     );
 };

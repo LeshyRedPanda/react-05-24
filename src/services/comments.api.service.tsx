@@ -4,7 +4,7 @@ import {AxiosResponse} from "axios";
 
 
 const commentsApiService = {
-    getCommentsOfPost:(postId:string):Promise<AxiosResponse<ICommentModel>> =>{
+    getCommentsOfPost:(postId:string):Promise<AxiosResponse<ICommentModel[]>> =>{
         return axiosInstance.get(`/posts/${postId}/comments`)
     }
 }

@@ -3,15 +3,12 @@ import {Link} from "react-router-dom";
 
 const Header:FC = () => {
     return(
-        <div>
+        <div className={'header'}>
             <br/>
             <br/>
-            <Link to={'/'}>HoMe PaGe</Link>
-            <br/>
-            <Link to={'users'}>Users</Link>
-
-
-
+            <Link className={'header-link'} to={'/'}>Dogs Home Page</Link>
+            <br/><br/>
+            <Link className={'header-link'} to={'users'}>Users</Link>
         </div>
     )
 }

@@ -7,13 +7,9 @@ interface IPops{
 }
 
 const CommentsComp:FC<IPops> = ({comments}) => {
-
-
-
     return (
         <div>
             {comments.map(comment => <CommentComp key={comment.id} comment={comment}/>)}
-
         </div>
     );
 };
