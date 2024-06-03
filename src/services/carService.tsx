@@ -19,10 +19,10 @@ axiosInstance.interceptors.request.use(request => { // interceptors to get data 
 })
 
 const carService = {
-    getCars: async () => {
+    getCars: async (): Promise<ICarPaginatedModel['items'] | undefined> => {
         try {
             const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
-            return response.data;
+            return response.data.items;
         } catch (e) {
             const axiosError = e as AxiosError;
             if (axiosError?.response?.status === 401) { // 401 -  not authorized / unauthorized

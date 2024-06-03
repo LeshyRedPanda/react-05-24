@@ -9,9 +9,9 @@ const CarsPage = () => {
     const [carsObj, setCarsObj] = useState<ICarWithAuthModel[]>([])
 
     useEffect(() => {
-        carService.getCars().then(value => {
-            if (value) {
-                const {items} = value;
+        carService.getCars().then(items => {
+            if (items) {
+                // const {items} = value;
                 setCarsObj(items)
             }
         })

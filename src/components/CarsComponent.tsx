@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const CarsComponent: FC<IProps> = ({cars}) => {
-    console.log(cars)
+    // console.log(cars)
     return (
         <div>
             carS Component
