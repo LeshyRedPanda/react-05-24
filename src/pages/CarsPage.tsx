@@ -7,6 +7,7 @@ import authService from "../services/authService";
 import {ICarPaginatedModel} from "../Models/ICarPaginatedModel";
 import PaginationComponent from "../components/PaginationComponent";
 
+
 const CarsPage = () => {
     const navigate = useNavigate()
 
@@ -46,21 +47,10 @@ const CarsPage = () => {
     }, [query]) // deps[query] -
 
 
-    const changePage = (action: string) => {
-        switch (action) {
-            case 'prev':
-                setQuery({...carsObj.prev})
-                break;
-            case 'next':
-                setQuery({...carsObj.next})
-                break;
-        }
-    };
-
     return (
         <div>
             <hr/>
-            <PaginationComponent changePage={changePage} next={carsObj.next} prev={carsObj.prev}/>
+            <PaginationComponent next={carsObj.next} prev={carsObj.prev}/>
             <hr/>
             <CarsComponent cars={carsObj.items}/>
         </div>
