@@ -1,8 +1,6 @@
 import {ICarPaginatedModel} from "../Models/ICarPaginatedModel";
 import axiosInstance from "./api.service";
-import {AxiosError} from "axios";
 import {ITokenObtainPair} from "../Models/ITokenObtainPair";
-import authService from "./authService";
 import {retrieveLocalStorageData} from "./helpers-utils/helpers";
 
 axiosInstance.interceptors.request.use(request => {
@@ -14,22 +12,14 @@ axiosInstance.interceptors.request.use(request => {
 })
 
 
-
 const carService = {
-    getCars: async ():Promise<ICarPaginatedModel['items'] | undefined> => {
-        try {
-            const response = await axiosInstance.get<ICarPaginatedModel>('/cars');
-            return response.data.items
-        } catch (e) {
-            const axiosError = e as AxiosError;
-            if (axiosError?.response?.status === 401) {
-                const refreshToken = retrieveLocalStorageData<ITokenObtainPair>('tokenPair').refresh;
-                await authService.refresh(refreshToken);
-                await carService.getCars();
-            }
-        }
+    getCars: async (page:string):Promise<ICarPaginatedModel | null> => {
+            const response = await axiosInstance.get<ICarPaginatedModel>('/cars',{params:{page:page}});// add key-value /cars?page=2,3,4,5
+            return response.data;
+
     }
 }
+
 
 
 export default carService;
