@@ -1,16 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useStore} from "../context/ContextProvider";
 import CommentComponent from "./CommentComponent";
-import commentService from "../services/commentService";
 
 const CommentsComponent = () => {
-    const {commentsStore,commentsStore:{allComments}} = useStore();
-    useEffect(() => {
-        commentService.getComments().then(comments => {
-            commentsStore.loadComments(comments.data)
-        })
-    }, );
 
+    const {commentsStore: {allComments}} = useStore();
 
     return (
         <div>

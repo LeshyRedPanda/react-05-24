@@ -11,9 +11,7 @@ const HeaderComponent = () => {
                 <li><Link to={'comments'}> Comments page </Link></li>
                 <li><Link to={'userPosts'}> Users with posts page </Link></li>
                 <li><Link to={'postComments'}> Post with comments page </Link></li>
-
             </ul>
-
         </div>
     );
 };

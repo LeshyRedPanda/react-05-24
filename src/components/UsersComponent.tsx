@@ -1,15 +1,10 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {useStore} from "../context/ContextProvider";
 import UserComponent from "./UserComponent";
-import userService from "../services/userService";
 
 const UsersComponent = () => {
-    const {userStore,userStore:{allUsers}} = useStore();
-    useEffect(() => {
-        userService.getUsers().then(users => {
-            userStore.loadUsers(users.data)
-        })
-    }, );
+
+    const {userStore: {allUsers}} = useStore();
 
     return (
         <div>
